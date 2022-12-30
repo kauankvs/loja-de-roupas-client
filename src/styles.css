@@ -9,3 +9,9 @@ body {
     padding: 20px;
     border-radius: 3px;
 }
+
+.titulo-form {
+    text-align: center;
+    margin-bottom: 16px;
+    font-family: Helvetica, sans-serif;
+}

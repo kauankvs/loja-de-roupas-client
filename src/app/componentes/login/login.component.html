@@ -1,5 +1,5 @@
 <div class="box-form container">
-    <h3>Login:</h3>
+    <h3 class="titulo-form">Login:</h3>
     <form [formGroup]="loginForm">
         <div class="form-group">
             <label for="email">Email</label>
@@ -9,6 +9,8 @@
             <label for="senha">Senha</label>
             <input class="form-control" id="senha" type="password" formControlName="senha" placeholder="Senha">
         </div>
-        <button type="submit" class="btn btn-dark text-center">Enviar</button>
+        <div class="text-center">
+            <button type="submit" class="btn btn-dark text-center">Enviar</button>
+        </div>
     </form>
 </div>

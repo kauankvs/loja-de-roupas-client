@@ -1,1 +1,34 @@
-<p>registro works!</p>
+<div class="box-form container">
+    <h3 class="titulo-form">Crie sua conta:</h3>
+    <form [formGroup]="registroForm">
+        <div class="custom-file div-img">
+            <label for="nome" class="custom-file-label">Foto</label>
+            <input class="custom-file-input" id="foto" type="file" formControlName="foto" placeholder="Foto">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nome">Nome</label>
+                <input class="form-control" id="email" type="text" formControlName="nome" placeholder="Nome">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="nome">Sobrenome</label>
+                <input class="form-control" id="sobrenome" type="text" formControlName="sobrenome" placeholder="Sobrenome">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input class="form-control" id="email" type="email" formControlName="email" placeholder="Insira email">
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha</label>
+            <input class="form-control" id="senha" type="password" formControlName="senha" placeholder="Senha">
+        </div>
+        <div class="form-group">
+            <label for="idade">Nome</label>
+            <input class="form-control" id="idade" type="number" formControlName="idade" placeholder="Idade">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-dark">Registrar</button>
+        </div>
+    </form>
+</div>
