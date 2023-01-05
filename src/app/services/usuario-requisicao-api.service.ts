@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginInterface } from '../interface/login-interface';
-import { RegistroComponent } from '../componentes/registro/registro.component';
 import { RegistroInterface } from '../interface/registro-interface';
+import { PerfilInterface } from '../interface/perfil-interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +21,13 @@ export class UsuarioRequisicaoApiService {
   }
 
   registrarRequest(requestForm: FormData): void { 
-    this.client.post<RegistroInterface>(this.URL_SERVER +'registrar', requestForm).subscribe({
+    this.client.post<RegistroInterface>(this.URL_SERVER +'registrar', requestForm, { withCredentials: true }).subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })
+  }
+
+  displayContaRequest(): Observable<PerfilInterface> {
+    return this.client.get<PerfilInterface>(this.URL_SERVER + "conta", { withCredentials: true });
   }
 }
