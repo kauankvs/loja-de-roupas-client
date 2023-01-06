@@ -9,6 +9,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { CategoriaComponent } from './componentes/categoria/categoria.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     NavegacaoComponent,
     LoginComponent,
     RegistroComponent,
-    PerfilComponent
+    PerfilComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavegacaoComponent implements OnInit {
 
+  categorias: string[] = ['Camisa', 'Casaco', 'Moletom', 'Calca', 'Short', 'Intima', 'Acessorio', 'Beleza'];
+
   constructor() { }
 
   ngOnInit(): void {
