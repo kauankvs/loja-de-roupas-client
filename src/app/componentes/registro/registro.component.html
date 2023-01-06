@@ -1,6 +1,6 @@
 <div class="box-form container">
-    <h3 class="titulo-form" (ngSubmit)="enviarRegistro()">Crie sua conta:</h3>
-    <form [formGroup]="registroForm">
+    <h3 class="titulo-form" >Crie sua conta:</h3>
+    <form [formGroup]="registroForm" (ngSubmit)="enviarRegistro()">
         <div class="custom-file div-img">
             <label for="nome" class="custom-file-label">Foto</label>
             <input class="custom-file-input" id="foto" type="file" formControlName="foto" placeholder="Foto">

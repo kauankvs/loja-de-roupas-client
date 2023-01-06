@@ -21,7 +21,7 @@ export class UsuarioRequisicaoApiService {
   }
 
   registrarRequest(requestForm: FormData): void { 
-    this.client.post<RegistroInterface>(this.URL_SERVER +'registrar', requestForm, { withCredentials: true }).subscribe({
+    this.client.post<RegistroInterface>(this.URL_SERVER +'register', requestForm, { withCredentials: true }).subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })

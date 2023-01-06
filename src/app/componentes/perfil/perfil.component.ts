@@ -25,8 +25,8 @@ export class PerfilComponent implements OnInit {
       dataDeCriacao: data.dataDeCriacao
     });
 
-    if(this.perfilDisplay == null) 
-      this.router.navigate(["/login"]);
+    //if(this.perfilDisplay == null) 
+    //  this.router.navigate(["/login"]);
   }
 
   
