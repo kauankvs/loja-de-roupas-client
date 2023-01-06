@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProdutoInterface } from 'src/app/interface/produto-interface';
+import { ProdutoRequisicaoApiService } from 'src/app/services/produto-requisicao-api.service';
 
 @Component({
   selector: 'app-categoria',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriaComponent implements OnInit {
 
-  constructor() { }
+  produtosPorCategoria?: ProdutoInterface[];
+
+  constructor(private service: ProdutoRequisicaoApiService) { }
 
   ngOnInit(): void {
+    const categoriaRequest: string = history.state.categoriaRequest;
+    this.service.selecionarProdutosPorCategoriaRequest(categoriaRequest).subscribe(data => this.produtosPorCategoria = data);
   }
 
 }

@@ -1,3 +1,4 @@
+
 export interface RegistroInterface {
     foto?: string,
     nome: string,

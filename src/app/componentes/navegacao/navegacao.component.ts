@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavegacaoComponent implements OnInit {
 
-  categorias: string[] = ['Camisa', 'Casaco', 'Moletom', 'Calca', 'Short', 'Intima', 'Acessorio', 'Beleza'];
+  categorias = [{nome: 'camisa', nomeDisplay: 'Camisas', categoriaRequest: 'Camisa'},
+                {nome: 'casaco', nomeDisplay: 'Casacos', categoriaRequest: 'Casaco'},
+                {nome: 'moletom', nomeDisplay: 'Moletons', categoriaRequest: 'Moletom'},
+                {nome: 'calca', nomeDisplay: 'Calças', categoriaRequest: 'Calca'},
+                {nome: 'short', nomeDisplay: 'Shorts', categoriaRequest: 'Short'}, 
+                {nome: 'intima', nomeDisplay: 'Íntima', categoriaRequest: 'Intima'},
+                {nome: 'acessorio', nomeDisplay: 'Acessórios', categoriaRequest: 'Acessorio'},
+                {nome: 'beleza', nomeDisplay: 'Beleza', categoriaRequest: 'Beleza'}]
 
   constructor() { }
 

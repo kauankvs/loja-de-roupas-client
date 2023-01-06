@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ProdutoInterface } from '../interface/produto-interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class ProdutoRequisicaoApiService {
 
   constructor(private client: HttpClient) { }
 
-  selecionarProdutosPorCategoriaRequest(categoria: string) {
-    this.client.get<ProdutoInterface>(this.URL_SERVER + categoria);
+  selecionarProdutosPorCategoriaRequest(categoriaRequest: string): Observable<ProdutoInterface[]> {
+    return this.client.get<ProdutoInterface[]>(this.URL_SERVER + categoriaRequest);
   }
 }
