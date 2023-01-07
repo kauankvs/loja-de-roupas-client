@@ -16,7 +16,10 @@ export class CategoriaComponent implements OnInit {
 
   ngOnInit(): void {
     const categoriaRequest: string = history.state.categoriaRequest;
-    this.service.selecionarProdutosPorCategoriaRequest(categoriaRequest).subscribe(data => this.produtosPorCategoria = data);
+    this.service.selecionarProdutosPorCategoriaRequest(categoriaRequest).subscribe(
+      (data) => console.log(data),
+      (err) => console.log(err)
+    );
   }
 
 }

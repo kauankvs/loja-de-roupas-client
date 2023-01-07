@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navegacao',
@@ -16,9 +17,13 @@ export class NavegacaoComponent implements OnInit {
                 {nome: 'acessorio', nomeDisplay: 'Acessórios', categoriaRequest: 'Acessorio'},
                 {nome: 'beleza', nomeDisplay: 'Beleza', categoriaRequest: 'Beleza'}]
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  navegarParaCategoria(categoria: any) {
+    this.router.navigate(['/categoria', categoria.nome], {state: {categoriaRequest: categoria.categoriaRequest}});
   }
 
 }

@@ -12,6 +12,6 @@ export class ProdutoRequisicaoApiService {
   constructor(private client: HttpClient) { }
 
   selecionarProdutosPorCategoriaRequest(categoriaRequest: string): Observable<ProdutoInterface[]> {
-    return this.client.get<ProdutoInterface[]>(this.URL_SERVER + categoriaRequest);
+    return this.client.get<ProdutoInterface[]>(this.URL_SERVER + "tipo/" + categoriaRequest);
   }
 }

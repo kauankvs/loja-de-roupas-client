@@ -1,4 +1,5 @@
 <div class="box-form container">
+    <img *ngIf="this.perfilDisplay?.foto != null" [src]="this.perfilDisplay?.foto">
     <p>Nome: {{ this.perfilDisplay?.nome }} {{ this.perfilDisplay?.sobrenome }}</p>
     <p>Email: {{ this.perfilDisplay?.email }}</p>
     <p>Nivel: {{ this.perfilDisplay?.nivel }}</p>

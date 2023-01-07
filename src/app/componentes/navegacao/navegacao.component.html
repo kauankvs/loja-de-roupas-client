@@ -20,7 +20,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active" *ngFor="let categoria of categorias">
-            <a class="nav-link" [routerLink]="['/categoria', categoria.nome]" [state]="{categoriaRequest: categoria.categoriaRequest}">{{ categoria.nomeDisplay }}</a>
+            <a class="nav-link" (click)="navegarParaCategoria(categoria)">{{ categoria.nomeDisplay }}</a>
           </li>
         </ul>
       </div>
