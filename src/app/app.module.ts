@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { CategoriaComponent } from './componentes/categoria/categoria.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

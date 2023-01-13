@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { LoginInterface } from '../interface/login-interface';
 import { RegistroInterface } from '../interface/registro-interface';
@@ -14,20 +14,24 @@ export class UsuarioRequisicaoApiService {
   constructor(private client: HttpClient) { }
 
   loginRequest(requestForm: FormData): void {
-    this.client.post<LoginInterface>(this.URL_SERVER + 'login', requestForm).subscribe({
-      next: (response) => console.log(response),
-      error: (error) => console.log(error)
-    });
+    this.client.post(this.URL_SERVER + 'login', requestForm, { responseType: 'text' }).subscribe({
+    next: (response) => { 
+      console.log(response);
+      localStorage.setItem("Token", JSON.stringify(response))
+    },
+    error: (response) => console.log(response)
+  })
   }
 
   registrarRequest(requestForm: FormData): void { 
-    this.client.post<RegistroInterface>(this.URL_SERVER +'register', requestForm, { withCredentials: true }).subscribe({
+    this.client.post(this.URL_SERVER + 'register', requestForm ).subscribe({
       next: (response) => console.log(response),
       error: (error) => console.log(error)
     })
   }
 
   displayContaRequest(): Observable<PerfilInterface> {
-    return this.client.get<PerfilInterface>(this.URL_SERVER + "conta", { withCredentials: true });
+    let token = localStorage.getItem("Token");
+    return this.client.get<PerfilInterface>(this.URL_SERVER + "conta", { headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' } });
   }
 }

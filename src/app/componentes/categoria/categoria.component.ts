@@ -20,6 +20,7 @@ export class CategoriaComponent implements OnInit {
       (data) => console.log(data),
       (err) => console.log(err)
     );
+    history.state
   }
 
 }
