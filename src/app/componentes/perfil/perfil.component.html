@@ -1,7 +1,17 @@
-<div class="box-form container">
-    <img *ngIf="this.perfilDisplay?.foto != null" [src]="this.perfilDisplay?.foto">
-    <p>Nome: {{ this.perfilDisplay?.nome }} {{ this.perfilDisplay?.sobrenome }}</p>
-    <p>Email: {{ this.perfilDisplay?.email }}</p>
-    <p>Nivel: {{ this.perfilDisplay?.nivel }}</p>
-    <p>Criação: {{ this.perfilDisplay?.dataDeCriacao | date }}</p>
+<div class="box-form container" *ngIf="perfilDisplay != null">
+    <h4>Informações da Conta</h4>
+    <img *ngIf="this.perfilDisplay?.foto != null" [src]="this.perfilDisplay.foto">
+    <p>Nome: {{ this.perfilDisplay.nome }} {{ this.perfilDisplay.sobrenome }}</p>
+    <p>Email: {{ this.perfilDisplay.email }}</p>
+    <p>Nivel: {{ this.perfilDisplay.nivel }}</p>
+    <p>Criação: {{ this.perfilDisplay.dataDeCriacao | date: 'dd/MM/yyyy' }}</p>
+
+    <div class="configs">
+        <h4>Configurações da Conta</h4>
+        <p>Mudar Email da Conta:</p>
+        <button type="button" class="btn btn-secondary btn-sm">Mudar Email</button>
+        <p>Mudar Senha da Conta:</p>
+        <button type="button" class="btn btn-secondary btn-sm">Mudar Senha</button>
+    </div>
 </div>
+

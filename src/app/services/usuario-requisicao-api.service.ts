@@ -4,6 +4,7 @@ import { LoginInterface } from '../interface/login-interface';
 import { RegistroInterface } from '../interface/registro-interface';
 import { PerfilInterface } from '../interface/perfil-interface';
 import { Observable } from 'rxjs';
+import { Form } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,21 @@ export class UsuarioRequisicaoApiService {
   displayContaRequest(): Observable<PerfilInterface> {
     let token = localStorage.getItem("Token");
     return this.client.get<PerfilInterface>(this.URL_SERVER + "conta", { withCredentials: true, headers: { 'Authorization': 'Bearer ' + token  } });
+  }
+
+  mudarSenhaRequest(senha: FormData): void {
+    let token = localStorage.getItem("Token");
+    this.client.put(this.URL_SERVER + "mudar/senha", senha, { withCredentials: true, headers: { 'Authorization': 'Bearer ' + token  } }).subscribe({
+      next: (response) => console.log(response),
+      error: (error) => console.log(error),
+    })
+  }
+
+  mudarEmailRequest(email: FormData): void {
+    let token = localStorage.getItem("Token");
+    this.client.put(this.URL_SERVER + "mudar/email", email, { withCredentials: true, headers: { 'Authorization': 'Bearer ' + token  } }).subscribe({
+      next: (response) => console.log(response),
+      error: (error) => console.log(error),
+    })
   }
 }
