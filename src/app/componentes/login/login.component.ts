@@ -32,6 +32,6 @@ export class LoginComponent implements OnInit {
   enviarFormulario(): void {
     let formData: FormData = this.transformarEmFormData();
     this.service.loginRequest(formData);
-    //this.loginForm.reset();
+    this.loginForm.reset();
   }
 }

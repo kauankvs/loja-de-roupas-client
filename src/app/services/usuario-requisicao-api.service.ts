@@ -17,7 +17,7 @@ export class UsuarioRequisicaoApiService {
     this.client.post(this.URL_SERVER + 'login', requestForm, { responseType: 'text' }).subscribe({
     next: (response) => { 
       console.log(response);
-      localStorage.setItem("Token", JSON.stringify(response))
+      localStorage.setItem("Token", response);
     },
     error: (response) => console.log(response)
   })
@@ -26,12 +26,12 @@ export class UsuarioRequisicaoApiService {
   registrarRequest(requestForm: FormData): void { 
     this.client.post(this.URL_SERVER + 'register', requestForm ).subscribe({
       next: (response) => console.log(response),
-      error: (error) => console.log(error)
+      error: (error) => console.log(error),
     })
   }
 
   displayContaRequest(): Observable<PerfilInterface> {
     let token = localStorage.getItem("Token");
-    return this.client.get<PerfilInterface>(this.URL_SERVER + "conta", { headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' } });
+    return this.client.get<PerfilInterface>(this.URL_SERVER + "conta", { withCredentials: true, headers: { 'Authorization': 'Bearer ' + token  } });
   }
 }

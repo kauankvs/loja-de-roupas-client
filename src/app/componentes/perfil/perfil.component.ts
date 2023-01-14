@@ -25,8 +25,22 @@ export class PerfilComponent implements OnInit {
       dataDeCriacao: data.dataDeCriacao
     });
 
-    //if(this.perfilDisplay == null) 
-    //  this.router.navigate(["/login"]);
+    this.service.displayContaRequest().subscribe({
+      next: (data: PerfilInterface) => { this.perfilDisplay = {
+        nome: data.nome,
+        sobrenome: data.sobrenome,
+        foto: data.foto,
+        email: data.email,
+        nivel: data.nivel,
+        dataDeCriacao: data.dataDeCriacao
+      }    
+    },
+      error: (error) => { 
+        console.log(error);
+        this.router.navigate(["/login"]);
+      },
+    })
+
   }
 
   

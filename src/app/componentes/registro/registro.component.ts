@@ -37,7 +37,7 @@ export class RegistroComponent implements OnInit {
   enviarRegistro(): void {
     var formulario: FormData = this.transformarEmFormData();
     this.service.registrarRequest(formulario);
-    //this.registroForm.reset();
+    this.registroForm.reset();
   }
 
 }
